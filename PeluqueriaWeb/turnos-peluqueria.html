@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Reservá tu turno en Gala Peluquería para servicios de peluquería y manicure."
+    >
+    <title>Turnos | Gala Peluquería</title>
+  </head>
+  <body>
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="site-header">
+      <div class="site-header__container">
+        <a class="site-header__logo" href="index.html" aria-label="Ir al inicio de Gala Peluquería">
+          Gala Peluquería
+        </a>
+
+        <nav class="site-nav" aria-label="Navegación principal">
+          <ul class="site-nav__list">
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="index.html">Inicio</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="turnos-peluqueria.html">Turnos</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="contacto.html">Contacto</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="servicios.html">Servicios</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="site-header__actions" aria-label="Redes y contacto rápido">
+          <a class="button button--secondary" href="#" aria-label="Abrir Instagram de Gala Peluquería">
+            Instagram
+          </a>
+          <a class="button button--primary" href="#" aria-label="Contactar por WhatsApp con Gala Peluquería">
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <!-- ENCABEZADO / PRESENTACIÓN DE TURNOS -->
+      <section class="appointments-hero" aria-labelledby="appointments-hero-title">
+        <div class="appointments-hero__container">
+          <figure class="appointments-hero__media">
+            <img
+              class="appointments-hero__image"
+              src="img/local/turnos-encabezado.jpg"
+              alt="Espacio de atención de Gala Peluquería para reservar turnos"
+            >
+          </figure>
+
+          <div class="appointments-hero__content">
+            <h1 class="appointments-hero__title" id="appointments-hero-title">
+              Reserva tu turno
+            </h1>
+            <p class="appointments-hero__text">
+              Elegí el día y la hora que mejor se ajuste a tu agenda, sin esperas innecesarias.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN PROCESO DE RESERVA -->
+      <section class="booking-process" aria-labelledby="booking-process-title">
+        <div class="booking-process__container">
+          <div class="section-heading booking-process__heading">
+            <p class="section-heading__label">Proceso</p>
+            <h2 class="section-heading__title" id="booking-process-title">
+              Cómo reservar tu turno
+            </h2>
+            <p class="section-heading__text">Tres pasos simples para agendar</p>
+          </div>
+
+          <div class="booking-process__steps">
+            <article class="booking-step">
+              <figure class="booking-step__media">
+                <img
+                  class="booking-step__image"
+                  src="img/local/paso-servicio.jpg"
+                  alt="Selección del servicio para reservar turno"
+                >
+              </figure>
+              <p class="booking-step__label">Paso uno</p>
+              <h3 class="booking-step__title">Elegí el servicio</h3>
+              <p class="booking-step__text">
+                Buscá entre martes y sábados el horario que se ajuste a tu visita.
+              </p>
+              <a class="booking-step__link" href="#service-selector">Continuar</a>
+            </article>
+
+            <article class="booking-step">
+              <figure class="booking-step__media">
+                <img
+                  class="booking-step__image"
+                  src="img/local/paso-horario.jpg"
+                  alt="Selección de día y horario disponible"
+                >
+              </figure>
+              <p class="booking-step__label">Paso dos</p>
+              <h3 class="booking-step__title">Seleccioná día y horario</h3>
+              <p class="booking-step__text">
+                Contamos con horarios desde las ocho de la mañana hasta las ocho de la noche.
+              </p>
+              <a class="booking-step__link" href="#calendar">Continuar</a>
+            </article>
+
+            <article class="booking-step">
+              <figure class="booking-step__media">
+                <img
+                  class="booking-step__image"
+                  src="img/local/paso-whatsapp.jpg"
+                  alt="Confirmación de turno por WhatsApp"
+                >
+              </figure>
+              <p class="booking-step__label">Paso tres</p>
+              <h3 class="booking-step__title">Confirma por WhatsApp</h3>
+              <p class="booking-step__text">
+                Un mensaje directo con nuestra peluquera para cerrar tu reserva sin demoras.
+              </p>
+              <a class="booking-step__link" href="#booking-confirmation">Confirmar</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN DISPONIBILIDAD Y CALENDARIO -->
+      <section class="availability-section" aria-labelledby="availability-title">
+        <div class="availability-section__container">
+          <div class="availability-section__content">
+            <p class="section-heading__label">Disponibilidad</p>
+            <h2 class="availability-section__title" id="availability-title">
+              Consultá la disponibilidad
+            </h2>
+            <p class="availability-section__text">
+              Mirá en tiempo real qué horarios están libres y reservá el que se ajuste a tu
+              rutina.
+            </p>
+
+            <!-- SELECTOR DE SERVICIO -->
+            <section class="service-selector" id="service-selector" aria-labelledby="service-selector-title">
+              <h3 class="service-selector__title" id="service-selector-title">
+                ¿Qué servicio querés reservar?
+              </h3>
+              <div class="service-selector__options" role="group" aria-label="Selector de servicio">
+                <button
+                  class="service-selector__button service-selector__button--active"
+                  type="button"
+                  aria-pressed="true"
+                  data-service="peluqueria"
+                >
+                  <span class="service-selector__name">Peluquería</span>
+                  <span class="service-selector__description">Agenda de cortes, color y peinados</span>
+                </button>
+                <button
+                  class="service-selector__button"
+                  type="button"
+                  aria-pressed="false"
+                  data-service="manicure"
+                >
+                  <span class="service-selector__name">Manicure</span>
+                  <span class="service-selector__description">Agenda de uñas</span>
+                </button>
+              </div>
+            </section>
+
+            <!-- REFERENCIAS DEL CALENDARIO -->
+            <section class="calendar-legend" aria-labelledby="calendar-legend-title">
+              <h3 class="calendar-legend__title" id="calendar-legend-title">
+                Referencias del calendario
+              </h3>
+              <ul class="calendar-legend__list">
+                <li class="calendar-legend__item">
+                  <span class="calendar-legend__marker calendar-legend__marker--available"></span>
+                  Disponible
+                </li>
+                <li class="calendar-legend__item">
+                  <span class="calendar-legend__marker calendar-legend__marker--unavailable"></span>
+                  No disponible
+                </li>
+                <li class="calendar-legend__item">
+                  <span class="calendar-legend__marker calendar-legend__marker--selected"></span>
+                  Seleccionado
+                </li>
+                <li class="calendar-legend__item">
+                  <span class="calendar-legend__marker calendar-legend__marker--blocked"></span>
+                  Domingo o lunes bloqueado
+                </li>
+              </ul>
+              <p class="calendar-legend__note">La reserva se confirma por WhatsApp.</p>
+            </section>
+
+            <!-- CONFIRMACIÓN PREPARADA PARA USUARIOS REGISTRADOS -->
+            <section
+              class="booking-confirmation"
+              id="booking-confirmation"
+              aria-labelledby="booking-confirmation-title"
+            >
+              <h3 class="booking-confirmation__title" id="booking-confirmation-title">
+                Confirmación de reserva
+              </h3>
+              <p class="booking-confirmation__text">
+                Para confirmar una reserva, necesitás estar registrado o iniciar sesión.
+              </p>
+              <div class="booking-confirmation__actions">
+                <a class="button button--primary" href="#">Iniciar sesión</a>
+                <a class="button button--secondary" href="#">Registrarme</a>
+              </div>
+              <a class="booking-confirmation__whatsapp" href="#">
+                Reservar turno por WhatsApp
+              </a>
+            </section>
+          </div>
+
+          <!-- CALENDARIO ÚNICO POR SERVICIO -->
+          <section class="calendar-panel" id="calendar" aria-labelledby="calendar-title">
+            <h2 class="calendar-panel__title" id="calendar-title">
+              Calendario único por servicio
+            </h2>
+            <p class="calendar-panel__service-status">
+              Mostrando disponibilidad de: Peluquería
+            </p>
+
+            <article class="calendar-card" aria-labelledby="calendar-month">
+              <header class="calendar-card__header">
+                <h3 class="calendar-card__month" id="calendar-month">Mayo 2026</h3>
+                <button class="calendar-card__change" type="button">Cambiar</button>
+              </header>
+
+              <div class="calendar-grid" role="grid" aria-label="Calendario de turnos de mayo 2026">
+                <div class="calendar-grid__weekday" role="columnheader">Dom</div>
+                <div class="calendar-grid__weekday" role="columnheader">Lun</div>
+                <div class="calendar-grid__weekday" role="columnheader">Mar</div>
+                <div class="calendar-grid__weekday" role="columnheader">Mié</div>
+                <div class="calendar-grid__weekday" role="columnheader">Jue</div>
+                <div class="calendar-grid__weekday" role="columnheader">Vie</div>
+                <div class="calendar-grid__weekday" role="columnheader">Sáb</div>
+
+                <span class="calendar-day calendar-day--empty" role="gridcell" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--empty" role="gridcell" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--empty" role="gridcell" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--empty" role="gridcell" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--empty" role="gridcell" aria-hidden="true"></span>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">1</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">2</button>
+
+                <button class="calendar-day calendar-day--blocked" type="button" role="gridcell" disabled>3</button>
+                <button class="calendar-day calendar-day--blocked" type="button" role="gridcell" disabled>4</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">5</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">6</button>
+                <button class="calendar-day calendar-day--unavailable" type="button" role="gridcell">7</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">8</button>
+                <button class="calendar-day calendar-day--selected" type="button" role="gridcell">9</button>
+
+                <button class="calendar-day calendar-day--blocked" type="button" role="gridcell" disabled>10</button>
+                <button class="calendar-day calendar-day--blocked" type="button" role="gridcell" disabled>11</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">12</button>
+                <button class="calendar-day calendar-day--unavailable" type="button" role="gridcell">13</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">14</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">15</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">16</button>
+
+                <button class="calendar-day calendar-day--blocked" type="button" role="gridcell" disabled>17</button>
+                <button class="calendar-day calendar-day--blocked" type="button" role="gridcell" disabled>18</button>
+                <button class="calendar-day calendar-day--selected" type="button" role="gridcell">19</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">20</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">21</button>
+                <button class="calendar-day calendar-day--unavailable" type="button" role="gridcell">22</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">23</button>
+
+                <button class="calendar-day calendar-day--blocked" type="button" role="gridcell" disabled>24</button>
+                <button class="calendar-day calendar-day--blocked" type="button" role="gridcell" disabled>25</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">26</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">27</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">28</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">29</button>
+                <button class="calendar-day calendar-day--available" type="button" role="gridcell">30</button>
+
+                <button class="calendar-day calendar-day--blocked" type="button" role="gridcell" disabled>31</button>
+              </div>
+
+              <!-- HORARIOS DEL DÍA SELECCIONADO -->
+              <section class="time-slots" aria-labelledby="time-slots-title">
+                <h4 class="time-slots__title" id="time-slots-title">Horarios disponibles:</h4>
+                <div class="time-slots__list" role="group" aria-label="Horarios para el día seleccionado">
+                  <button class="time-slot time-slot--available" type="button">08:00 hs</button>
+                  <button class="time-slot time-slot--selected" type="button">10:00 hs</button>
+                  <button class="time-slot time-slot--unavailable" type="button" disabled>
+                    12:00 hs - No disponible
+                  </button>
+                  <button class="time-slot time-slot--available" type="button">14:00 hs</button>
+                  <button class="time-slot time-slot--available" type="button">16:00 hs</button>
+                  <button class="time-slot time-slot--unavailable" type="button" disabled>
+                    18:00 hs - No disponible
+                  </button>
+                  <button class="time-slot time-slot--available" type="button">20:00 hs</button>
+                </div>
+              </section>
+            </article>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__container">
+        <section class="site-footer__brand" aria-labelledby="footer-brand-title">
+          <h2 class="site-footer__logo" id="footer-brand-title">Gala Peluquería</h2>
+          <p class="site-footer__description">
+            Peluquería y manicure con atención cálida, personalizada y pensada para que disfrutes
+            tu momento.
+          </p>
+        </section>
+
+        <nav class="site-footer__nav" aria-label="Navegación del pie de página">
+          <h3 class="site-footer__heading">Navegación</h3>
+          <ul class="site-footer__list">
+            <li class="site-footer__item">
+              <a class="site-footer__link" href="index.html">Inicio</a>
+            </li>
+            <li class="site-footer__item">
+              <a class="site-footer__link" href="turnos-peluqueria.html">Turnos peluquería</a>
+            </li>
+            <li class="site-footer__item">
+              <a class="site-footer__link" href="turnos-manicura.html">Turnos manicure</a>
+            </li>
+            <li class="site-footer__item">
+              <a class="site-footer__link" href="galeria.html">Galería</a>
+            </li>
+            <li class="site-footer__item">
+              <a class="site-footer__link" href="contacto.html">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+
+        <section class="site-footer__info" aria-labelledby="footer-info-title">
+          <h3 class="site-footer__heading" id="footer-info-title">Información</h3>
+          <ul class="site-footer__list">
+            <li class="site-footer__item">Horarios: martes a sábado de 08:00 a 20:00</li>
+            <li class="site-footer__item">Dirección: pendiente de confirmar</li>
+            <li class="site-footer__item">Teléfono: pendiente de confirmar</li>
+          </ul>
+        </section>
+
+        <section class="site-footer__social" aria-labelledby="footer-social-title">
+          <h3 class="site-footer__heading" id="footer-social-title">Redes sociales</h3>
+          <ul class="site-footer__list">
+            <li class="site-footer__item">
+              <a class="site-footer__link" href="#">Instagram</a>
+            </li>
+            <li class="site-footer__item">
+              <a class="site-footer__link" href="#">WhatsApp</a>
+            </li>
+            <li class="site-footer__item">
+              <a class="site-footer__link" href="#">TikTok</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">
+          &copy; 2026 Gala Peluquería. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
