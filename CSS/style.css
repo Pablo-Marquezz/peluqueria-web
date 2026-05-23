@@ -659,3 +659,926 @@ ul {
     padding: 1.5rem;
   }
 }
+
+/* =========================================================
+   =============================================
+   PÁGINA DE TURNOS
+   =============================================
+   ========================================================= */
+
+/* =========================================================
+   TURNOS / ENCABEZADO DE LA PÁGINA
+   ========================================================= */
+
+.appointments-hero {
+  background: var(--color-overlay);
+  color: var(--color-white);
+  min-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.appointments-hero__container {
+  display: grid;
+  min-height: 300px;
+  place-items: center;
+  position: relative;
+}
+
+.appointments-hero__media {
+  inset: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.appointments-hero__media::after {
+  background: linear-gradient(90deg, rgba(95, 69, 72, 0.8), rgba(99, 70, 90, 0.62));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.appointments-hero__image {
+  background: var(--color-mauve);
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.appointments-hero__content {
+  max-width: 760px;
+  padding: 4rem 1.5rem;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.appointments-hero__title {
+  font-size: clamp(3rem, 7vw, 5.3rem);
+  font-weight: 800;
+  line-height: 1.02;
+}
+
+.appointments-hero__text {
+  color: var(--color-cream);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  margin-top: 1.2rem;
+}
+
+/* =========================================================
+   TURNOS / PROCESO DE RESERVA
+   ========================================================= */
+
+.booking-process {
+  background: var(--color-off-white);
+  padding: var(--section-padding) 1.5rem;
+}
+
+.booking-process__container {
+  margin-inline: auto;
+  max-width: var(--container);
+}
+
+.booking-process__steps {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.booking-step {
+  background:
+    linear-gradient(rgba(95, 69, 72, 0.78), rgba(95, 69, 72, 0.78)),
+    var(--color-mauve);
+  border-radius: var(--radius-medium);
+  color: var(--color-white);
+  min-height: 430px;
+  overflow: hidden;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  position: relative;
+}
+
+.booking-step__media {
+  inset: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.booking-step__media::after {
+  background: rgba(95, 69, 72, 0.62);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.booking-step__image {
+  background: var(--color-mauve);
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.booking-step__label,
+.booking-step__title,
+.booking-step__text,
+.booking-step__link {
+  position: relative;
+  z-index: 1;
+}
+
+.booking-step__label {
+  color: var(--color-cream);
+  font-size: 0.9rem;
+  margin-top: 210px;
+}
+
+.booking-step__title {
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.16;
+  margin-top: 0.45rem;
+}
+
+.booking-step__text {
+  color: var(--color-soft-cream);
+  font-size: 0.98rem;
+  margin-top: 1.2rem;
+}
+
+.booking-step__link {
+  color: var(--color-white);
+  display: inline-flex;
+  font-weight: 700;
+  margin-top: 1.6rem;
+}
+
+.booking-step__link::after {
+  content: "›";
+  margin-left: 0.45rem;
+}
+
+/* =========================================================
+   TURNOS / DISPONIBILIDAD Y LAYOUT DEL CALENDARIO
+   ========================================================= */
+
+.availability-section {
+  background: linear-gradient(180deg, var(--color-off-white), var(--color-soft-cream));
+  padding: var(--section-padding) 1.5rem;
+}
+
+.availability-section__container {
+  align-items: start;
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  grid-template-columns: minmax(280px, 0.9fr) minmax(360px, 1fr);
+  margin-inline: auto;
+  max-width: var(--container);
+}
+
+.availability-section__title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.availability-section__text {
+  color: var(--color-muted);
+  font-size: 1.04rem;
+  margin-top: 1.1rem;
+  max-width: 520px;
+}
+
+/* =========================================================
+   TURNOS / SELECTOR DE SERVICIO
+   ========================================================= */
+
+.service-selector {
+  margin-top: 1.5rem;
+}
+
+.service-selector__title {
+  color: var(--color-text);
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.service-selector__options {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0.9rem;
+}
+
+.service-selector__button {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  color: var(--color-brown);
+  cursor: pointer;
+  font-family: var(--font-main);
+  min-height: 86px;
+  padding: 1rem 1.2rem;
+  text-align: left;
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.service-selector__button:hover,
+.service-selector__button--active {
+  background: var(--color-white);
+  border-color: var(--color-pink);
+  box-shadow: 0 16px 38px rgba(99, 70, 90, 0.12);
+  transform: translateY(-2px);
+}
+
+.service-selector__button--active {
+  border-left: 6px solid var(--color-mauve);
+}
+
+.service-selector__name {
+  display: block;
+  font-size: 1.16rem;
+  font-weight: 800;
+}
+
+.service-selector__description {
+  color: var(--color-muted);
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* =========================================================
+   TURNOS / REFERENCIAS DEL CALENDARIO
+   ========================================================= */
+
+.calendar-legend {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  margin-top: 1rem;
+  padding: 1.3rem;
+}
+
+.calendar-legend__title {
+  font-size: 1.18rem;
+  font-weight: 800;
+}
+
+.calendar-legend__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1rem;
+  margin-top: 0.9rem;
+}
+
+.calendar-legend__item {
+  align-items: center;
+  color: var(--color-muted);
+  display: inline-flex;
+  font-size: 0.95rem;
+  gap: 0.45rem;
+}
+
+.calendar-legend__marker {
+  border-radius: 999px;
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+}
+
+.calendar-legend__marker--available {
+  background: var(--color-nude);
+}
+
+.calendar-legend__marker--unavailable {
+  background: var(--color-coral);
+}
+
+.calendar-legend__marker--selected {
+  background: #79a889;
+}
+
+.calendar-legend__marker--blocked {
+  background: var(--color-pink-light);
+}
+
+.calendar-legend__note {
+  color: var(--color-muted);
+  font-size: 0.94rem;
+  margin-top: 1rem;
+}
+
+/* =========================================================
+   TURNOS / BLOQUE DE LOGIN Y REGISTRO
+   ========================================================= */
+
+.booking-confirmation {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: 0 18px 45px rgba(99, 70, 90, 0.09);
+  margin-top: 1.2rem;
+  padding: 1.5rem;
+}
+
+.booking-confirmation__title {
+  font-size: 1.32rem;
+  font-weight: 800;
+}
+
+.booking-confirmation__text {
+  color: var(--color-muted);
+  margin-top: 0.55rem;
+}
+
+.booking-confirmation__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.booking-confirmation__whatsapp {
+  color: var(--color-wine);
+  display: inline-flex;
+  font-weight: 800;
+  margin-top: 1.1rem;
+}
+
+.booking-confirmation__whatsapp::after {
+  content: "→";
+  margin-left: 0.5rem;
+}
+
+/* =========================================================
+   TURNOS / CALENDARIO
+   ========================================================= */
+
+.calendar-panel {
+  background: rgba(232, 215, 198, 0.56);
+  border-radius: var(--radius-large);
+  padding: clamp(1.3rem, 4vw, 2.7rem);
+}
+
+.calendar-panel__title {
+  color: var(--color-text);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.calendar-panel__service-status {
+  color: var(--color-muted);
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+.calendar-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  box-shadow: 0 22px 55px rgba(99, 70, 90, 0.11);
+  margin: clamp(2rem, 5vw, 3.2rem) auto 0;
+  max-width: 540px;
+  padding: clamp(1.2rem, 4vw, 2rem);
+}
+
+.calendar-card__header {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-card__month {
+  color: var(--color-brown);
+  font-size: 1.55rem;
+  font-weight: 800;
+}
+
+.calendar-card__change {
+  background: var(--color-blush);
+  border: 1px solid var(--color-pink);
+  border-radius: 999px;
+  color: var(--color-brown);
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-weight: 800;
+  padding: 0.55rem 1.15rem;
+}
+
+.calendar-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar-grid__weekday {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: var(--radius-small);
+  color: var(--color-text);
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 800;
+  min-width: 0;
+}
+
+.calendar-day--empty {
+  display: block;
+}
+
+.calendar-day--available {
+  background: var(--color-nude);
+}
+
+.calendar-day--available:hover {
+  background: var(--color-beige);
+}
+
+.calendar-day--blocked {
+  background: var(--color-blush);
+  color: var(--color-muted);
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.calendar-day--unavailable {
+  background: var(--color-coral);
+  color: var(--color-white);
+}
+
+.calendar-day--selected {
+  background: #79a889;
+  color: var(--color-white);
+  box-shadow: 0 8px 22px rgba(121, 168, 137, 0.32);
+}
+
+/* =========================================================
+   TURNOS / HORARIOS DESPLEGABLES
+   ========================================================= */
+
+.time-slots {
+  margin-top: 1.7rem;
+}
+
+.time-slots__title {
+  color: var(--color-brown);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.time-slots__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.8rem;
+}
+
+.time-slot {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-weight: 800;
+  min-height: 36px;
+  padding: 0.45rem 1rem;
+}
+
+.time-slot--available {
+  background: var(--color-blush);
+  border-color: var(--color-border);
+  color: var(--color-brown);
+}
+
+.time-slot--available:hover {
+  background: var(--color-pink-light);
+}
+
+.time-slot--unavailable {
+  background: rgba(237, 120, 85, 0.18);
+  border-color: var(--color-coral);
+  color: var(--color-coral);
+  cursor: not-allowed;
+}
+
+.time-slot--selected {
+  background: #79a889;
+  border-color: #79a889;
+  color: var(--color-white);
+}
+
+/* =========================================================
+   TURNOS / FOOTER
+   ========================================================= */
+
+.upcoming-appointments + .site-footer,
+.availability-section + .site-footer {
+  margin-top: 0;
+}
+
+/* =========================================================
+   TURNOS / RESPONSIVE TABLET
+   ========================================================= */
+
+@media (max-width: 920px) {
+  .booking-process__steps,
+  .availability-section__container {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-step {
+    min-height: 360px;
+  }
+
+  .booking-step__label {
+    margin-top: 150px;
+  }
+
+  .calendar-panel {
+    padding: 1.4rem;
+  }
+}
+
+/* =========================================================
+   TURNOS / RESPONSIVE CELULAR
+   ========================================================= */
+
+@media (max-width: 620px) {
+  .appointments-hero__container {
+    min-height: 260px;
+  }
+
+  .appointments-hero__content {
+    padding: 3rem 1rem;
+  }
+
+  .booking-process,
+  .availability-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .booking-process__steps {
+    margin-top: 2.2rem;
+  }
+
+  .service-selector__options {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-legend__list {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .booking-confirmation__actions .button {
+    flex: 1;
+  }
+
+  .calendar-card {
+    border-radius: var(--radius-medium);
+    padding: 1rem;
+  }
+
+  .calendar-grid {
+    gap: 0.45rem;
+  }
+
+  .calendar-day {
+    font-size: 0.9rem;
+  }
+
+  .time-slot {
+    flex: 1 1 calc(50% - 0.65rem);
+  }
+}
+
+/* =========================================================
+   =============================================
+   PÁGINA DE GALERÍA
+   =============================================
+   ========================================================= */
+
+/* =========================================================
+   GALERÍA / ENCABEZADO DE LA PÁGINA
+   ========================================================= */
+
+.gallery-hero {
+  background: var(--color-overlay);
+  color: var(--color-white);
+  min-height: 430px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-hero__container {
+  display: grid;
+  min-height: 430px;
+  place-items: center;
+  position: relative;
+}
+
+.gallery-hero__media {
+  inset: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.gallery-hero__media::after {
+  background: linear-gradient(90deg, rgba(95, 69, 72, 0.8), rgba(99, 70, 90, 0.64));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.gallery-hero__image {
+  background: var(--color-mauve);
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.gallery-hero__content {
+  max-width: 920px;
+  padding: 5rem 1.5rem;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.gallery-hero__title {
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.gallery-hero__text {
+  color: var(--color-cream);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  margin-top: 1.35rem;
+}
+
+/* =========================================================
+   GALERÍA / SECCIÓN DE FOTOS DE CORTES DE PELO
+   ========================================================= */
+
+.hair-gallery-section {
+  background: var(--color-off-white);
+  padding: clamp(5rem, 10vw, 8rem) 1.5rem;
+}
+
+.hair-gallery-section__container {
+  margin-inline: auto;
+  max-width: var(--container);
+}
+
+.hair-gallery-section__heading {
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.hair-gallery-grid {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  grid-template-columns: 1.45fr 1fr 1fr;
+}
+
+.hair-gallery-grid__item {
+  background:
+    linear-gradient(135deg, rgba(255, 240, 244, 0.58), rgba(232, 215, 198, 0.58)),
+    var(--color-cream);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: 0 16px 45px rgba(99, 70, 90, 0.08);
+  min-height: 290px;
+  overflow: hidden;
+}
+
+.hair-gallery-grid__item--featured {
+  grid-row: span 2;
+  min-height: 620px;
+}
+
+.hair-gallery-grid__image {
+  background: var(--color-nude);
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* =========================================================
+   GALERÍA / SECCIÓN DE FOTOS DE MANICURE
+   ========================================================= */
+
+.manicure-gallery-section {
+  background: linear-gradient(180deg, var(--color-off-white), var(--color-soft-cream));
+  border-top: 1px solid rgba(234, 215, 222, 0.7);
+  padding: clamp(5rem, 10vw, 8rem) 1.5rem;
+}
+
+.manicure-gallery-section__container {
+  margin-inline: auto;
+  max-width: var(--container);
+}
+
+.manicure-gallery-section__heading {
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.manicure-gallery-cards {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.manicure-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: 0 18px 45px rgba(99, 70, 90, 0.08);
+  overflow: hidden;
+}
+
+.manicure-card__media {
+  background:
+    linear-gradient(135deg, rgba(247, 207, 220, 0.5), rgba(237, 216, 167, 0.42)),
+    var(--color-cream);
+  min-height: 340px;
+}
+
+.manicure-card__image {
+  background: var(--color-nude);
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.manicure-card__content {
+  padding: clamp(1.5rem, 4vw, 2.4rem);
+}
+
+.manicure-card__label {
+  color: var(--color-mauve);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.manicure-card__title {
+  color: var(--color-text);
+  font-size: clamp(1.75rem, 3vw, 2.45rem);
+  font-weight: 800;
+  line-height: 1.18;
+  margin-top: 0.7rem;
+}
+
+.manicure-card__text {
+  color: var(--color-muted);
+  font-size: 1.02rem;
+  margin-top: 1.2rem;
+}
+
+.manicure-card__link {
+  color: var(--color-wine);
+  display: inline-flex;
+  font-weight: 800;
+  margin-top: 2rem;
+}
+
+.manicure-card__link::after {
+  content: "›";
+  margin-left: 0.55rem;
+}
+
+/* =========================================================
+   GALERÍA / SECCIÓN DE LLAMADO A SACAR TURNO
+   ========================================================= */
+
+.gallery-appointments-section {
+  background: var(--color-off-white);
+  border-top: 1px solid rgba(234, 215, 222, 0.7);
+  padding: clamp(5rem, 9vw, 7rem) 1.5rem;
+  text-align: center;
+}
+
+.gallery-appointments-section__container {
+  margin-inline: auto;
+  max-width: 980px;
+}
+
+.gallery-appointments-section__title {
+  color: var(--color-text);
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.gallery-appointments-section__text {
+  color: var(--color-muted);
+  font-size: 1.08rem;
+  margin: 1.2rem auto 0;
+  max-width: 680px;
+}
+
+.gallery-appointments-section__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* =========================================================
+   GALERÍA / FOOTER
+   ========================================================= */
+
+.gallery-appointments-section + .site-footer {
+  margin-top: 0;
+}
+
+/* =========================================================
+   GALERÍA / RESPONSIVE TABLET
+   ========================================================= */
+
+@media (max-width: 920px) {
+  .gallery-hero,
+  .gallery-hero__container {
+    min-height: 360px;
+  }
+
+  .hair-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hair-gallery-grid__item--featured {
+    grid-column: span 2;
+    grid-row: auto;
+    min-height: 460px;
+  }
+
+  .manicure-gallery-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .manicure-card {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.1fr);
+  }
+}
+
+/* =========================================================
+   GALERÍA / RESPONSIVE CELULAR
+   ========================================================= */
+
+@media (max-width: 620px) {
+  .gallery-hero,
+  .gallery-hero__container {
+    min-height: 300px;
+  }
+
+  .gallery-hero__content {
+    padding: 3.5rem 1rem;
+  }
+
+  .hair-gallery-section,
+  .manicure-gallery-section,
+  .gallery-appointments-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hair-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hair-gallery-grid__item,
+  .hair-gallery-grid__item--featured {
+    grid-column: auto;
+    min-height: 300px;
+  }
+
+  .manicure-card {
+    display: block;
+  }
+
+  .manicure-card__media,
+  .manicure-card__image {
+    min-height: 260px;
+  }
+
+  .gallery-appointments-section__actions .button {
+    flex: 1;
+  }
+}
