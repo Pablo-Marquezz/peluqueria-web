@@ -1582,3 +1582,907 @@ ul {
     flex: 1;
   }
 }
+
+/* =========================================================
+   =============================================
+   PÁGINA DE CONTACTO
+   =============================================
+   ========================================================= */
+
+/* =========================================================
+   CONTACTO / ENCABEZADO CON IMAGEN DE FONDO
+   ========================================================= */
+
+.contact-hero {
+  background: var(--color-overlay);
+  color: var(--color-white);
+  min-height: 520px;
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-hero__container {
+  display: grid;
+  min-height: 520px;
+  place-items: center;
+  position: relative;
+}
+
+.contact-hero__media {
+  inset: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.contact-hero__media::after {
+  background: linear-gradient(90deg, rgba(95, 69, 72, 0.84), rgba(99, 70, 90, 0.66));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.contact-hero__image {
+  background: var(--color-mauve);
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.contact-hero__content {
+  max-width: 920px;
+  padding: 5rem 1.5rem;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.contact-hero__label {
+  color: var(--color-cream);
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+.contact-hero__title {
+  font-size: clamp(3.1rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.contact-hero__text {
+  color: var(--color-cream);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  margin: 1.4rem auto 0;
+  max-width: 860px;
+}
+
+.contact-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2.1rem;
+}
+
+.contact-hero__actions .button--primary {
+  background: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-text);
+}
+
+.contact-hero__actions .button--secondary {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.84);
+  color: var(--color-white);
+}
+
+/* =========================================================
+   CONTACTO / REDES SOCIALES Y MAPA DE GOOGLE MAPS
+   ========================================================= */
+
+.contact-info-section {
+  background: var(--color-off-white);
+  padding: clamp(5rem, 10vw, 8rem) 1.5rem;
+}
+
+.contact-info-section__container {
+  align-items: end;
+  display: grid;
+  gap: clamp(3rem, 7vw, 6.5rem);
+  grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
+  margin-inline: auto;
+  max-width: var(--container);
+}
+
+.contact-info-section__title {
+  color: var(--color-text);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.02;
+}
+
+.contact-info-section__text {
+  color: var(--color-muted);
+  font-size: 1.12rem;
+  margin-top: 1.2rem;
+}
+
+.contact-methods {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  margin-top: clamp(3rem, 7vw, 5.5rem);
+}
+
+.contact-method {
+  color: var(--color-text);
+}
+
+.contact-method__icon {
+  align-items: center;
+  background: var(--color-blush);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-wine);
+  display: inline-flex;
+  font-size: 1.25rem;
+  height: 42px;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 42px;
+}
+
+.contact-method__title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.contact-method__text {
+  color: var(--color-muted);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.contact-method__link {
+  border-bottom: 1px solid currentColor;
+  color: var(--color-wine);
+  display: inline-flex;
+  font-weight: 800;
+  margin-top: 0.65rem;
+}
+
+.contact-info-section__map {
+  background:
+    linear-gradient(135deg, rgba(255, 240, 244, 0.5), rgba(232, 215, 198, 0.68)),
+    var(--color-cream);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  box-shadow: 0 22px 55px rgba(99, 70, 90, 0.1);
+  min-height: clamp(420px, 48vw, 650px);
+  overflow: hidden;
+}
+
+.contact-info-section__iframe {
+  border: 0;
+  display: block;
+  filter: grayscale(1) contrast(0.84) brightness(1.08);
+  height: 100%;
+  min-height: clamp(420px, 48vw, 650px);
+  width: 100%;
+}
+
+/* =========================================================
+   CONTACTO / PREGUNTAS FRECUENTES
+   ========================================================= */
+
+.faq-section {
+  background: var(--color-off-white);
+  border-top: 1px solid rgba(234, 215, 222, 0.72);
+  padding: clamp(5rem, 10vw, 8rem) 1.5rem;
+}
+
+.faq-section__container {
+  margin-inline: auto;
+  max-width: 820px;
+}
+
+.faq-section__heading {
+  margin-bottom: clamp(2.8rem, 6vw, 4.5rem);
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  box-shadow: 0 12px 32px rgba(99, 70, 90, 0.06);
+  padding: clamp(1.25rem, 3vw, 1.65rem);
+}
+
+.faq-item__header {
+  align-items: start;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.faq-item__question {
+  color: var(--color-text);
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.faq-item__symbol {
+  color: var(--color-wine);
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.faq-item__answer {
+  color: var(--color-muted);
+  font-size: 0.98rem;
+  margin-top: 1.05rem;
+}
+
+.faq-section__contact {
+  margin-top: clamp(3.5rem, 7vw, 5rem);
+  text-align: center;
+}
+
+.faq-section__subtitle {
+  color: var(--color-text);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.faq-section__text {
+  color: var(--color-muted);
+  font-size: 1.03rem;
+  margin-top: 1rem;
+}
+
+.faq-section__contact .button {
+  margin-top: 1.8rem;
+}
+
+/* =========================================================
+   CONTACTO / CTA FINAL HACIA TURNOS
+   ========================================================= */
+
+.contact-appointments-section {
+  background: linear-gradient(180deg, var(--color-off-white), var(--color-soft-cream));
+  border-top: 1px solid rgba(234, 215, 222, 0.72);
+  padding: clamp(5rem, 9vw, 7rem) 1.5rem;
+  text-align: center;
+}
+
+.contact-appointments-section__container {
+  margin-inline: auto;
+  max-width: 720px;
+}
+
+.contact-appointments-section__title {
+  color: var(--color-text);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.contact-appointments-section__text {
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  margin-top: 1.25rem;
+}
+
+.contact-appointments-section__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* =========================================================
+   CONTACTO / FOOTER
+   ========================================================= */
+
+.contact-appointments-section + .site-footer {
+  margin-top: 0;
+}
+
+/* =========================================================
+   CONTACTO / RESPONSIVE TABLET
+   ========================================================= */
+
+@media (max-width: 920px) {
+  .contact-hero,
+  .contact-hero__container {
+    min-height: 430px;
+  }
+
+  .contact-info-section__container {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+
+  .contact-methods {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .contact-info-section__map,
+  .contact-info-section__iframe {
+    min-height: 420px;
+  }
+}
+
+/* =========================================================
+   CONTACTO / RESPONSIVE CELULAR
+   ========================================================= */
+
+@media (max-width: 620px) {
+  .contact-hero,
+  .contact-hero__container {
+    min-height: 360px;
+  }
+
+  .contact-hero__content {
+    padding: 3.5rem 1rem;
+  }
+
+  .contact-hero__actions .button,
+  .contact-appointments-section__actions .button {
+    flex: 1;
+  }
+
+  .contact-info-section,
+  .faq-section,
+  .contact-appointments-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-section__map,
+  .contact-info-section__iframe {
+    min-height: 320px;
+  }
+
+  .faq-item__header {
+    gap: 0.75rem;
+  }
+}
+
+/* =========================================================
+   =============================================
+   PANEL DE ADMINISTRACIÓN
+   =============================================
+   ========================================================= */
+
+/* =========================================================
+   DASHBOARD / CONTENEDOR GENERAL
+   ========================================================= */
+
+body:has(.dashboard-page) {
+  background:
+    radial-gradient(circle at 1px 1px, rgba(139, 94, 102, 0.16) 1px, transparent 0),
+    var(--color-soft-cream);
+  background-size: 20px 20px;
+}
+
+.dashboard-page {
+  background: linear-gradient(180deg, var(--color-off-white), var(--color-soft-cream));
+  border: 1px solid rgba(234, 215, 222, 0.72);
+  border-radius: 0 0 var(--radius-large) var(--radius-large);
+  box-shadow: 0 30px 80px rgba(99, 70, 90, 0.14);
+  margin-inline: auto;
+  max-width: 760px;
+  min-height: 100vh;
+  padding: 0 clamp(1.2rem, 5vw, 3rem) clamp(4rem, 8vw, 6rem);
+}
+
+/* =========================================================
+   DASHBOARD / HEADER SUPERIOR
+   ========================================================= */
+
+.dashboard-header {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  min-height: 104px;
+}
+
+.dashboard-header__menu,
+.dashboard-header__notifications {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: var(--color-text);
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+  width: 48px;
+}
+
+.dashboard-header__menu:hover,
+.dashboard-header__notifications:hover {
+  background: var(--color-blush);
+  color: var(--color-wine);
+  transform: translateY(-1px);
+}
+
+.dashboard-header__menu-icon,
+.dashboard-header__notification-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.dashboard-header__title {
+  color: var(--color-brown);
+  font-size: clamp(2.1rem, 7vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+/* =========================================================
+   DASHBOARD / BLOQUE DE SALUDO
+   ========================================================= */
+
+.dashboard-welcome {
+  padding: clamp(2.2rem, 7vw, 4.4rem) 0 clamp(2.4rem, 7vw, 4.8rem);
+}
+
+.dashboard-welcome__eyebrow {
+  color: var(--color-mauve);
+  font-size: clamp(1.05rem, 3.5vw, 1.7rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.dashboard-welcome__title {
+  color: var(--color-text);
+  font-size: clamp(3rem, 11vw, 5.2rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.05;
+  margin-top: 1rem;
+}
+
+/* =========================================================
+   DASHBOARD / CARDS DE RESUMEN
+   ========================================================= */
+
+.dashboard-summary {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.4rem);
+}
+
+.dashboard-summary__title {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.summary-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(234, 215, 222, 0.72);
+  border-left: 7px solid var(--color-mauve);
+  border-radius: var(--radius-large);
+  box-shadow: 0 20px 50px rgba(99, 70, 90, 0.11);
+  min-height: clamp(190px, 32vw, 260px);
+  padding: clamp(1.6rem, 5vw, 2.5rem);
+  position: relative;
+}
+
+.summary-card--confirmed {
+  border-left-color: var(--color-nude);
+}
+
+.summary-card--pending {
+  border-left-color: var(--color-pink-light);
+}
+
+.summary-card--cancelled {
+  border-left-color: #d8cfc9;
+}
+
+.summary-card__icon {
+  align-items: center;
+  background: var(--color-soft-cream);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  color: var(--color-brown);
+  display: inline-flex;
+  font-size: 1.8rem;
+  height: 78px;
+  justify-content: center;
+  width: 78px;
+}
+
+.summary-card--confirmed .summary-card__icon {
+  background: rgba(232, 215, 198, 0.72);
+}
+
+.summary-card--pending .summary-card__icon {
+  background: var(--color-pink-light);
+}
+
+.summary-card--cancelled .summary-card__icon {
+  background: #eee7e2;
+}
+
+.summary-card__variation {
+  color: var(--color-brown);
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 800;
+  position: absolute;
+  right: clamp(1.5rem, 5vw, 2.5rem);
+  top: clamp(1.5rem, 5vw, 2.3rem);
+}
+
+.summary-card__variation--negative {
+  color: #b42d3c;
+}
+
+.summary-card__label {
+  color: var(--color-muted);
+  font-size: clamp(1.55rem, 5vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-top: clamp(2rem, 5vw, 2.7rem);
+}
+
+.summary-card__value {
+  color: var(--color-text);
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+/* =========================================================
+   DASHBOARD / SECCIÓN PRÓXIMOS TURNOS
+   ========================================================= */
+
+.upcoming-appointments {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(234, 215, 222, 0.72);
+  border-radius: var(--radius-large);
+  box-shadow: 0 24px 60px rgba(99, 70, 90, 0.12);
+  margin-top: clamp(3rem, 8vw, 5rem);
+  overflow: hidden;
+}
+
+.upcoming-appointments__header {
+  padding: clamp(1.6rem, 5vw, 2.7rem);
+}
+
+.upcoming-appointments__title {
+  color: var(--color-text);
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.appointment-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.65rem, 2vw, 1.2rem);
+  margin-top: 1.5rem;
+}
+
+.appointment-filters__button {
+  background: var(--color-soft-cream);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--color-brown);
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 800;
+  min-height: 44px;
+  min-width: clamp(92px, 22vw, 150px);
+  padding: 0.55rem 1.2rem;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.appointment-filters__button:hover,
+.appointment-filters__button:focus,
+.appointment-filters__button--active {
+  background: var(--color-mauve);
+  color: var(--color-white);
+  outline: 0;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   DASHBOARD / FILTROS INTERACTIVOS SOLO CON CSS
+   ========================================================= */
+
+.appointments-table-wrapper {
+  display: none;
+}
+
+.appointments-table-wrapper--active {
+  display: block;
+}
+
+.upcoming-appointments:has(.appointment-filters__button[data-filter="today"]:focus)
+  .appointments-table-wrapper,
+.upcoming-appointments:has(.appointment-filters__button[data-filter="tomorrow"]:focus)
+  .appointments-table-wrapper,
+.upcoming-appointments:has(.appointment-filters__button[data-filter="week"]:focus)
+  .appointments-table-wrapper {
+  display: none;
+}
+
+.upcoming-appointments:has(.appointment-filters__button[data-filter="today"]:focus)
+  #appointments-today,
+.upcoming-appointments:has(.appointment-filters__button[data-filter="tomorrow"]:focus)
+  #appointments-tomorrow,
+.upcoming-appointments:has(.appointment-filters__button[data-filter="week"]:focus)
+  #appointments-week {
+  display: block;
+}
+
+.upcoming-appointments:has(.appointment-filters__button[data-filter="tomorrow"]:focus)
+  .appointment-filters__button--active,
+.upcoming-appointments:has(.appointment-filters__button[data-filter="week"]:focus)
+  .appointment-filters__button--active {
+  background: var(--color-soft-cream);
+  color: var(--color-brown);
+}
+
+.upcoming-appointments:has(.appointment-filters__button[data-filter="tomorrow"]:focus)
+  .appointment-filters__button[data-filter="tomorrow"],
+.upcoming-appointments:has(.appointment-filters__button[data-filter="week"]:focus)
+  .appointment-filters__button[data-filter="week"] {
+  background: var(--color-mauve);
+  color: var(--color-white);
+}
+
+/* =========================================================
+   DASHBOARD / TABLA COMPLETA DE TURNOS
+   ========================================================= */
+
+.appointments-table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.appointments-table__caption {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.appointments-table__head {
+  background: var(--color-soft-cream);
+}
+
+.appointments-table__heading {
+  color: var(--color-muted);
+  font-size: clamp(0.8rem, 2.7vw, 1.15rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: clamp(1rem, 4vw, 1.7rem) clamp(0.65rem, 3vw, 1.6rem);
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.appointments-table__heading:nth-child(1),
+.appointments-table__time {
+  width: 22%;
+}
+
+.appointments-table__heading:nth-child(2),
+.appointments-table__client {
+  width: 43%;
+}
+
+.appointments-table__heading:nth-child(3),
+.appointments-table__service {
+  width: 35%;
+}
+
+.appointments-table__row {
+  border-bottom: 1px solid rgba(234, 215, 222, 0.58);
+}
+
+.appointments-table__body .appointments-table__row {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.appointments-table__time,
+.appointments-table__client,
+.appointments-table__service {
+  padding: clamp(1.15rem, 4vw, 1.7rem) clamp(0.65rem, 3vw, 1.6rem);
+  vertical-align: middle;
+}
+
+.appointments-table__time {
+  color: var(--color-brown);
+  font-size: clamp(1.05rem, 3.6vw, 1.45rem);
+  font-weight: 800;
+  white-space: normal;
+}
+
+.appointments-table__client {
+  align-items: center;
+  color: var(--color-text);
+  display: flex;
+  gap: clamp(0.55rem, 2vw, 1rem);
+  min-width: 0;
+}
+
+.appointments-table__avatar,
+.appointments-table__avatar-image {
+  align-items: center;
+  background: #eee7e2;
+  border-radius: 999px;
+  color: var(--color-brown);
+  display: inline-flex;
+  flex: 0 0 clamp(34px, 8vw, 50px);
+  font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+  font-weight: 800;
+  height: clamp(34px, 8vw, 50px);
+  justify-content: center;
+  object-fit: cover;
+  width: clamp(34px, 8vw, 50px);
+}
+
+.appointments-table__body .appointments-table__row:nth-child(2) .appointments-table__avatar {
+  background: var(--color-pink-light);
+}
+
+.appointments-table__body .appointments-table__row:nth-child(3) .appointments-table__avatar {
+  background: var(--color-soft-cream);
+}
+
+.appointments-table__client-name {
+  display: block;
+  font-size: clamp(0.98rem, 3.2vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.18;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.appointments-table__service {
+  color: var(--color-brown);
+  font-size: clamp(0.92rem, 3vw, 1.3rem);
+  font-weight: 650;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.upcoming-appointments__footer {
+  background: rgba(255, 255, 255, 0.9);
+  padding: clamp(1.3rem, 4vw, 2rem);
+  text-align: center;
+}
+
+.upcoming-appointments__calendar-link {
+  color: var(--color-brown);
+  display: inline-flex;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-weight: 800;
+}
+
+/* =========================================================
+   DASHBOARD / FOOTER
+   ========================================================= */
+
+.dashboard-page + .site-footer {
+  margin-top: 0;
+}
+
+body:has(.dashboard-page) .site-footer {
+  background: var(--color-soft-cream);
+}
+
+/* =========================================================
+   DASHBOARD / RESPONSIVE TABLET
+   ========================================================= */
+
+@media (min-width: 761px) {
+  .dashboard-page {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard-page {
+    border-radius: 0;
+    max-width: none;
+  }
+}
+
+/* =========================================================
+   DASHBOARD / RESPONSIVE CELULAR
+   ========================================================= */
+
+@media (max-width: 520px) {
+  .dashboard-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .dashboard-header {
+    grid-template-columns: 42px 1fr 42px;
+    min-height: 86px;
+  }
+
+  .dashboard-header__menu,
+  .dashboard-header__notifications {
+    height: 42px;
+    width: 42px;
+  }
+
+  .summary-card {
+    border-left-width: 5px;
+  }
+
+  .upcoming-appointments {
+    border-radius: var(--radius-medium);
+  }
+
+  .appointment-filters {
+    gap: 0.55rem;
+  }
+
+  .appointment-filters__button {
+    flex: 1;
+    min-width: 0;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .appointments-table__heading,
+  .appointments-table__time,
+  .appointments-table__client,
+  .appointments-table__service {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .appointments-table__heading:nth-child(1),
+  .appointments-table__time {
+    width: 21%;
+  }
+
+  .appointments-table__heading:nth-child(2),
+  .appointments-table__client {
+    width: 44%;
+  }
+
+  .appointments-table__heading:nth-child(3),
+  .appointments-table__service {
+    width: 35%;
+  }
+}

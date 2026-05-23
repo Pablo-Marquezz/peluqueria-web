@@ -5,285 +5,307 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="Panel de administración de Gala Peluquería para gestionar turnos y calendario."
+      content="Panel de administración desktop de Gala Peluquería para gestionar turnos, staff y calendario."
     >
-    <title>Dashboard | Gala Peluquería</title>
+    <title>Dashboard Desktop | Gala Peluquería</title>
   </head>
   <body>
-    <main class="dashboard-page">
-      <!-- HEADER SUPERIOR / DASHBOARD -->
-      <header class="dashboard-header" aria-label="Encabezado del panel de administración">
-        <button class="dashboard-header__menu" type="button" aria-label="Abrir menú de administración">
-          <svg
-            class="dashboard-header__menu-icon"
-            aria-hidden="true"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-          >
-            <path d="M4 7h16M4 12h16M4 17h16"></path>
-          </svg>
-        </button>
+    <!-- LAYOUT GENERAL DEL PANEL DE ADMINISTRACIÓN -->
+    <div class="admin-layout">
+      <!-- SIDEBAR IZQUIERDA FIJA -->
+      <aside class="admin-sidebar" aria-label="Navegación del panel de administración">
+        <a class="admin-sidebar__brand" href="admin.html">Gala Peluqueria</a>
 
-        <h1 class="dashboard-header__title">Dashboard</h1>
+        <nav class="admin-sidebar__nav" aria-label="Secciones del panel">
+          <ul class="admin-sidebar__list">
+            <li class="admin-sidebar__item">
+              <a class="admin-sidebar__link admin-sidebar__link--active" href="admin.html">
+                <svg
+                  class="admin-sidebar__icon"
+                  aria-hidden="true"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M4 4h6v6H4z"></path>
+                  <path d="M14 4h6v6h-6z"></path>
+                  <path d="M4 14h6v6H4z"></path>
+                  <path d="M14 14h6v6h-6z"></path>
+                </svg>
+                <span>Dashboard</span>
+              </a>
+            </li>
 
-        <button class="dashboard-header__notifications" type="button" aria-label="Ver notificaciones">
-          <svg
-            class="dashboard-header__notification-icon"
-            aria-hidden="true"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-          >
-            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
-            <path d="M13.7 21a2 2 0 0 1-3.4 0"></path>
-          </svg>
-        </button>
-      </header>
+            <li class="admin-sidebar__item">
+              <a class="admin-sidebar__link" href="turnos-peluqueria.html#calendar">
+                <svg
+                  class="admin-sidebar__icon"
+                  aria-hidden="true"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M7 3v4"></path>
+                  <path d="M17 3v4"></path>
+                  <path d="M4 8h16"></path>
+                  <path d="M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"></path>
+                </svg>
+                <span>Calendario</span>
+              </a>
+            </li>
 
-      <!-- SALUDO / BIENVENIDA -->
-      <section class="dashboard-welcome" aria-labelledby="dashboard-welcome-title">
-        <p class="dashboard-welcome__eyebrow">BIENVENIDO DE NUEVO</p>
-        <h2 class="dashboard-welcome__title" id="dashboard-welcome-title">
-          Hola, Salon Admin
-        </h2>
-      </section>
+            <li class="admin-sidebar__item">
+              <a class="admin-sidebar__link" href="turnos-peluqueria.html">
+                <svg
+                  class="admin-sidebar__icon"
+                  aria-hidden="true"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M6 4h12a1 1 0 0 1 1 1v15l-3-2-3 2-3-2-3 2V5a1 1 0 0 1 1-1z"></path>
+                  <path d="M8 9h8"></path>
+                  <path d="M8 13h8"></path>
+                </svg>
+                <span>Turnos</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
-      <!-- CARDS DE RESUMEN -->
-      <section class="dashboard-summary" aria-labelledby="dashboard-summary-title">
-        <h2 class="dashboard-summary__title" id="dashboard-summary-title">Resumen de turnos</h2>
-
-        <article class="summary-card summary-card--total">
-          <div class="summary-card__icon" aria-hidden="true">□</div>
-          <p class="summary-card__variation">+12%</p>
-          <h3 class="summary-card__label">Total Turnos</h3>
-          <p class="summary-card__value">24</p>
-        </article>
-
-        <article class="summary-card summary-card--confirmed">
-          <div class="summary-card__icon" aria-hidden="true">✓</div>
-          <p class="summary-card__variation">80%</p>
-          <h3 class="summary-card__label">Confirmados</h3>
-          <p class="summary-card__value">18</p>
-        </article>
-
-        <article class="summary-card summary-card--pending">
-          <div class="summary-card__icon" aria-hidden="true">◷</div>
-          <p class="summary-card__variation">4 hoy</p>
-          <h3 class="summary-card__label">Pendientes</h3>
-          <p class="summary-card__value">4</p>
-        </article>
-
-        <article class="summary-card summary-card--cancelled">
-          <div class="summary-card__icon" aria-hidden="true">×</div>
-          <p class="summary-card__variation summary-card__variation--negative">-2</p>
-          <h3 class="summary-card__label">Cancelados</h3>
-          <p class="summary-card__value">2</p>
-        </article>
-      </section>
-
-      <!-- SECCIÓN PRÓXIMOS TURNOS -->
-      <section class="upcoming-appointments" aria-labelledby="upcoming-appointments-title">
-        <div class="upcoming-appointments__header">
-          <h2 class="upcoming-appointments__title" id="upcoming-appointments-title">
-            Próximos Turnos
-          </h2>
-
-          <div class="appointment-filters" role="tablist" aria-label="Filtrar próximos turnos">
-            <button
-              class="appointment-filters__button appointment-filters__button--active"
-              type="button"
-              role="tab"
-              aria-selected="true"
-              aria-controls="appointments-today"
-              data-filter="today"
-            >
-              Hoy
+      <!-- CONTENIDO PRINCIPAL DEL DASHBOARD -->
+      <main class="admin-main">
+        <!-- HEADER DEL CONTENIDO -->
+        <header class="admin-main-header" aria-label="Encabezado del contenido del dashboard">
+          <div class="admin-main-header__left">
+            <button class="admin-main-header__menu" type="button" aria-label="Abrir menú">
+              <svg
+                class="admin-main-header__menu-icon"
+                aria-hidden="true"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+              >
+                <path d="M4 7h16"></path>
+                <path d="M4 12h16"></path>
+                <path d="M4 17h16"></path>
+              </svg>
             </button>
-            <button
-              class="appointment-filters__button"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="appointments-tomorrow"
-              data-filter="tomorrow"
-            >
-              Mañana
-            </button>
-            <button
-              class="appointment-filters__button"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="appointments-week"
-              data-filter="week"
-            >
-              Semana
-            </button>
+            <h1 class="admin-main-header__title">Dashboard</h1>
           </div>
-        </div>
 
-        <!-- TABLA DE TURNOS / HOY -->
-        <div
-          class="appointments-table-wrapper appointments-table-wrapper--active"
-          id="appointments-today"
-          role="tabpanel"
-          aria-labelledby="upcoming-appointments-title"
-          data-period="today"
-        >
-          <table class="appointments-table">
-            <caption class="appointments-table__caption">Turnos para hoy</caption>
-            <thead class="appointments-table__head">
-              <tr class="appointments-table__row">
-                <th class="appointments-table__heading" scope="col">Horario</th>
-                <th class="appointments-table__heading" scope="col">Cliente</th>
-                <th class="appointments-table__heading" scope="col">Servicio</th>
-              </tr>
-            </thead>
-            <tbody class="appointments-table__body">
-              <tr class="appointments-table__row">
-                <td class="appointments-table__time">10:00</td>
-                <td class="appointments-table__client">
-                  <span class="appointments-table__avatar" aria-hidden="true">CM</span>
-                  <span class="appointments-table__client-name">Camila Martinez</span>
-                </td>
-                <td class="appointments-table__service">Balayage Premium</td>
-              </tr>
-              <tr class="appointments-table__row">
-                <td class="appointments-table__time">11:30</td>
-                <td class="appointments-table__client">
-                  <span class="appointments-table__avatar" aria-hidden="true">JS</span>
-                  <span class="appointments-table__client-name">Julian Soler</span>
-                </td>
-                <td class="appointments-table__service">Corte de Cabello</td>
-              </tr>
-              <tr class="appointments-table__row">
-                <td class="appointments-table__time">13:00</td>
-                <td class="appointments-table__client">
-                  <span class="appointments-table__avatar" aria-hidden="true">EV</span>
-                  <span class="appointments-table__client-name">Elena Vera</span>
-                </td>
-                <td class="appointments-table__service">Tratamiento Hidratante</td>
-              </tr>
-              <tr class="appointments-table__row">
-                <td class="appointments-table__time">14:45</td>
-                <td class="appointments-table__client">
+          <div class="admin-main-header__actions">
+            <button class="admin-main-header__notification" type="button" aria-label="Ver notificaciones">
+              <span class="admin-main-header__notification-dot" aria-hidden="true"></span>
+            </button>
+            <a class="admin-main-header__button" href="turnos-peluqueria.html">
+              Nuevo turno
+            </a>
+          </div>
+        </header>
+
+        <!-- CARDS DE RESUMEN -->
+        <section class="admin-summary" aria-labelledby="admin-summary-title">
+          <h2 class="admin-summary__title" id="admin-summary-title">Resumen del día</h2>
+
+          <article class="admin-summary-card admin-summary-card--total">
+            <h3 class="admin-summary-card__title">Total Turnos</h3>
+            <p class="admin-summary-card__number">42</p>
+            <p class="admin-summary-card__variation">+12% vs ayer</p>
+          </article>
+
+          <article class="admin-summary-card admin-summary-card--confirmed">
+            <h3 class="admin-summary-card__title">Confirmados</h3>
+            <p class="admin-summary-card__number">28</p>
+            <p class="admin-summary-card__variation">66% de ocupación</p>
+          </article>
+
+          <article class="admin-summary-card admin-summary-card--pending">
+            <h3 class="admin-summary-card__title">Pendientes</h3>
+            <p class="admin-summary-card__number">10</p>
+            <p class="admin-summary-card__variation">Requieren acción</p>
+          </article>
+
+          <article class="admin-summary-card admin-summary-card--cancelled">
+            <h3 class="admin-summary-card__title">Cancelados</h3>
+            <p class="admin-summary-card__number admin-summary-card__number--danger">4</p>
+            <p class="admin-summary-card__variation admin-summary-card__variation--danger">
+              -2% vs ayer
+            </p>
+          </article>
+        </section>
+
+        <!-- GRID DEL CONTENIDO PRINCIPAL -->
+        <div class="admin-content-grid">
+          <!-- SECCIÓN TURNOS DEL DÍA -->
+          <section class="admin-day-appointments" aria-labelledby="admin-day-appointments-title">
+            <header class="admin-section-header">
+              <div>
+                <h2 class="admin-section-header__title" id="admin-day-appointments-title">
+                  Turnos del Día
+                </h2>
+                <p class="admin-section-header__subtitle">Jueves, 24 de Octubre</p>
+              </div>
+              <a class="admin-section-header__link" href="#">Ver historial</a>
+            </header>
+
+            <table class="admin-appointments-table">
+              <caption class="admin-appointments-table__caption">
+                Turnos programados para el jueves, 24 de Octubre
+              </caption>
+              <thead class="admin-appointments-table__head">
+                <tr class="admin-appointments-table__row">
+                  <th class="admin-appointments-table__heading" scope="col">Hora</th>
+                  <th class="admin-appointments-table__heading" scope="col">Cliente</th>
+                  <th class="admin-appointments-table__heading" scope="col">Servicio</th>
+                  <th class="admin-appointments-table__heading" scope="col">Especialista</th>
+                  <th class="admin-appointments-table__heading" scope="col">Estado</th>
+                </tr>
+              </thead>
+              <tbody class="admin-appointments-table__body">
+                <tr class="admin-appointments-table__row">
+                  <td class="admin-appointments-table__time">09:00 AM</td>
+                  <td class="admin-appointments-table__client">
+                    <span class="admin-appointments-table__avatar" aria-hidden="true">EV</span>
+                    <span class="admin-appointments-table__client-name">Elena Valdés</span>
+                  </td>
+                  <td class="admin-appointments-table__service">Color &amp; Balayage</td>
+                  <td class="admin-appointments-table__specialist">Sofía R.</td>
+                  <td class="admin-appointments-table__status">
+                    <span class="status-badge status-badge--confirmed">Confirmado</span>
+                  </td>
+                </tr>
+
+                <tr class="admin-appointments-table__row">
+                  <td class="admin-appointments-table__time">10:30 AM</td>
+                  <td class="admin-appointments-table__client">
+                    <span class="admin-appointments-table__avatar" aria-hidden="true">ML</span>
+                    <span class="admin-appointments-table__client-name">Marta López</span>
+                  </td>
+                  <td class="admin-appointments-table__service">Corte &amp; Peinado</td>
+                  <td class="admin-appointments-table__specialist">Carlos M.</td>
+                  <td class="admin-appointments-table__status">
+                    <span class="status-badge status-badge--pending">Pendiente</span>
+                  </td>
+                </tr>
+
+                <tr class="admin-appointments-table__row">
+                  <td class="admin-appointments-table__time">12:15 PM</td>
+                  <td class="admin-appointments-table__client">
+                    <span class="admin-appointments-table__avatar" aria-hidden="true">JP</span>
+                    <span class="admin-appointments-table__client-name">Julia Pons</span>
+                  </td>
+                  <td class="admin-appointments-table__service">Tratamiento Keratina</td>
+                  <td class="admin-appointments-table__specialist">Sofía R.</td>
+                  <td class="admin-appointments-table__status">
+                    <span class="status-badge status-badge--confirmed">Confirmado</span>
+                  </td>
+                </tr>
+
+                <tr class="admin-appointments-table__row">
+                  <td class="admin-appointments-table__time">02:00 PM</td>
+                  <td class="admin-appointments-table__client">
+                    <span class="admin-appointments-table__avatar" aria-hidden="true">AG</span>
+                    <span class="admin-appointments-table__client-name">Ana García</span>
+                  </td>
+                  <td class="admin-appointments-table__service">Manicura Premium</td>
+                  <td class="admin-appointments-table__specialist">Lucía T.</td>
+                  <td class="admin-appointments-table__status">
+                    <span class="status-badge status-badge--cancelled">Cancelado</span>
+                  </td>
+                </tr>
+
+                <tr class="admin-appointments-table__row">
+                  <td class="admin-appointments-table__time">04:30 PM</td>
+                  <td class="admin-appointments-table__client">
+                    <span class="admin-appointments-table__avatar" aria-hidden="true">SD</span>
+                    <span class="admin-appointments-table__client-name">Silvia Díaz</span>
+                  </td>
+                  <td class="admin-appointments-table__service">Coloración Raíz</td>
+                  <td class="admin-appointments-table__specialist">Carlos M.</td>
+                  <td class="admin-appointments-table__status">
+                    <span class="status-badge status-badge--confirmed">Confirmado</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- COLUMNA DERECHA DEL DASHBOARD -->
+          <aside class="admin-side-column" aria-label="Información lateral del dashboard">
+            <!-- STAFF DEL DÍA -->
+            <section class="admin-staff" aria-labelledby="admin-staff-title">
+              <h2 class="admin-side-section__title" id="admin-staff-title">Staff del día</h2>
+
+              <div class="admin-staff__list">
+                <article class="admin-staff-card">
                   <img
-                    class="appointments-table__avatar-image"
-                    src="img/admin/clientes/ricardo-lopez.jpg"
-                    alt="Foto de Ricardo Lopez"
+                    class="admin-staff-card__image"
+                    src="img/admin/staff/sofia-r.jpg"
+                    alt="Foto de Sofía R."
                   >
-                  <span class="appointments-table__client-name">Ricardo Lopez</span>
-                </td>
-                <td class="appointments-table__service">Barba y Corte</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                  <div class="admin-staff-card__content">
+                    <h3 class="admin-staff-card__name">Sofía R.</h3>
+                    <p class="admin-staff-card__role">Colorista Senior</p>
+                  </div>
+                  <p class="admin-staff-card__appointments">6 turnos</p>
+                </article>
 
-        <!-- TABLA DE TURNOS / MAÑANA -->
-        <div
-          class="appointments-table-wrapper"
-          id="appointments-tomorrow"
-          role="tabpanel"
-          aria-labelledby="upcoming-appointments-title"
-          data-period="tomorrow"
-        >
-          <table class="appointments-table">
-            <caption class="appointments-table__caption">Turnos para mañana</caption>
-            <thead class="appointments-table__head">
-              <tr class="appointments-table__row">
-                <th class="appointments-table__heading" scope="col">Horario</th>
-                <th class="appointments-table__heading" scope="col">Cliente</th>
-                <th class="appointments-table__heading" scope="col">Servicio</th>
-              </tr>
-            </thead>
-            <tbody class="appointments-table__body">
-              <tr class="appointments-table__row">
-                <td class="appointments-table__time">09:00</td>
-                <td class="appointments-table__client">
-                  <span class="appointments-table__avatar" aria-hidden="true">AR</span>
-                  <span class="appointments-table__client-name">Ana Ruiz</span>
-                </td>
-                <td class="appointments-table__service">Manicure Completa</td>
-              </tr>
-              <tr class="appointments-table__row">
-                <td class="appointments-table__time">12:30</td>
-                <td class="appointments-table__client">
-                  <span class="appointments-table__avatar" aria-hidden="true">LV</span>
-                  <span class="appointments-table__client-name">Lucia Vega</span>
-                </td>
-                <td class="appointments-table__service">Color Global</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- TABLA DE TURNOS / SEMANA -->
-        <div
-          class="appointments-table-wrapper"
-          id="appointments-week"
-          role="tabpanel"
-          aria-labelledby="upcoming-appointments-title"
-          data-period="week"
-        >
-          <table class="appointments-table">
-            <caption class="appointments-table__caption">Turnos de la semana</caption>
-            <thead class="appointments-table__head">
-              <tr class="appointments-table__row">
-                <th class="appointments-table__heading" scope="col">Horario</th>
-                <th class="appointments-table__heading" scope="col">Cliente</th>
-                <th class="appointments-table__heading" scope="col">Servicio</th>
-              </tr>
-            </thead>
-            <tbody class="appointments-table__body">
-              <tr class="appointments-table__row">
-                <td class="appointments-table__time">Mar 10:00</td>
-                <td class="appointments-table__client">
-                  <span class="appointments-table__avatar" aria-hidden="true">CM</span>
-                  <span class="appointments-table__client-name">Camila Martinez</span>
-                </td>
-                <td class="appointments-table__service">Balayage Premium</td>
-              </tr>
-              <tr class="appointments-table__row">
-                <td class="appointments-table__time">Mié 11:30</td>
-                <td class="appointments-table__client">
-                  <span class="appointments-table__avatar" aria-hidden="true">JS</span>
-                  <span class="appointments-table__client-name">Julian Soler</span>
-                </td>
-                <td class="appointments-table__service">Corte de Cabello</td>
-              </tr>
-              <tr class="appointments-table__row">
-                <td class="appointments-table__time">Jue 13:00</td>
-                <td class="appointments-table__client">
-                  <span class="appointments-table__avatar" aria-hidden="true">EV</span>
-                  <span class="appointments-table__client-name">Elena Vera</span>
-                </td>
-                <td class="appointments-table__service">Tratamiento Hidratante</td>
-              </tr>
-              <tr class="appointments-table__row">
-                <td class="appointments-table__time">Vie 14:45</td>
-                <td class="appointments-table__client">
+                <article class="admin-staff-card">
                   <img
-                    class="appointments-table__avatar-image"
-                    src="img/admin/clientes/ricardo-lopez.jpg"
-                    alt="Foto de Ricardo Lopez"
+                    class="admin-staff-card__image"
+                    src="img/admin/staff/carlos-m.jpg"
+                    alt="Foto de Carlos M."
                   >
-                  <span class="appointments-table__client-name">Ricardo Lopez</span>
-                </td>
-                <td class="appointments-table__service">Barba y Corte</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                  <div class="admin-staff-card__content">
+                    <h3 class="admin-staff-card__name">Carlos M.</h3>
+                    <p class="admin-staff-card__role">Estilista Pro</p>
+                  </div>
+                  <p class="admin-staff-card__appointments">4 turnos</p>
+                </article>
 
-        <div class="upcoming-appointments__footer">
-          <a class="upcoming-appointments__calendar-link" href="turnos-peluqueria.html#calendar">
-            Ver todo el calendario
-          </a>
+                <article class="admin-staff-card">
+                  <img
+                    class="admin-staff-card__image"
+                    src="img/admin/staff/lucia-t.jpg"
+                    alt="Foto de Lucía T."
+                  >
+                  <div class="admin-staff-card__content">
+                    <h3 class="admin-staff-card__name">Lucía T.</h3>
+                    <p class="admin-staff-card__role">Manicurista</p>
+                  </div>
+                  <p class="admin-staff-card__appointments">8 turnos</p>
+                </article>
+              </div>
+            </section>
+
+            <!-- AGENDA MAÑANA -->
+            <section class="admin-tomorrow" aria-labelledby="admin-tomorrow-title">
+              <h2 class="admin-side-section__title" id="admin-tomorrow-title">Agenda Mañana</h2>
+
+              <article class="admin-tomorrow-card">
+                <div class="admin-tomorrow-card__icon" aria-hidden="true">
+                  <svg width="34" height="34" viewBox="0 0 24 24">
+                    <path d="M7 3v4"></path>
+                    <path d="M17 3v4"></path>
+                    <path d="M4 8h16"></path>
+                    <path d="M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"></path>
+                    <path d="m9 14 2 2 4-4"></path>
+                  </svg>
+                </div>
+                <p class="admin-tomorrow-card__text">
+                  Tienes 15 turnos programados para mañana.
+                </p>
+                <a class="admin-tomorrow-card__button" href="turnos-peluqueria.html#calendar">
+                  Ver Agenda Completa
+                </a>
+              </article>
+            </section>
+          </aside>
         </div>
-      </section>
-    </main>
+      </main>
+    </div>
 
     <!-- FOOTER -->
     <footer class="site-footer">
